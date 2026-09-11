@@ -1,7 +1,7 @@
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { useApi } from "../api.js";
 import { displayName, formatAed, formatHours, formatPct, monthLabel } from "../format.js";
-import { Fail, Loading, PageHeader, Stat, StatGrid, Table, marginTone } from "../ui.jsx";
+import { Fail, IssuesList, Loading, Note, PageHeader, Pill, Stat, StatGrid, Table, marginTone } from "../ui.jsx";
 
 export function DashboardPage() {
   const { query, year, month } = useOutletContext();
@@ -12,10 +12,18 @@ export function DashboardPage() {
   if (error) return <Fail error={error} />;
 
   const period = month === "all" ? year : `${monthLabel(month)} ${year}`;
+  const empty = !data.totalHours && !data.projects?.length;
 
   return (
     <div>
       <PageHeader kicker={period} title="Did we make money?" />
+      {empty && (
+        <Note>
+          No timesheet rows for this period. If this is a first run, wait for the API to finish
+          seeding, or upload the three spreadsheets in the header.
+        </Note>
+      )}
+      <IssuesList issues={data.issues} />
       <StatGrid>
         <Stat label="Hours" value={formatHours(data.totalHours)} />
         <Stat
@@ -34,7 +42,12 @@ export function DashboardPage() {
         rows={data.projects}
         columns={[
           { key: "refCode", label: "Ref" },
-          { key: "name", label: "Project", render: (r) => displayName(r.name) },
+          { key: "name", label: "Project", render: (r) => (
+            <span>
+              {displayName(r.name)}
+              {r.missingPrice && <Pill tone="bad">No price</Pill>}
+            </span>
+          ) },
           { key: "category", label: "Category" },
           { key: "hours", label: "Hours", align: "right", render: (r) => formatHours(r.hours) },
           { key: "costAed", label: "Cost", align: "right", render: (r) => formatAed(r.costAed) },

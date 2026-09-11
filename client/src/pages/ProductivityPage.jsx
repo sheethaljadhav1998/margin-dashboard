@@ -1,7 +1,7 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { useApi } from "../api.js";
 import { formatHours, formatPct, monthLabel } from "../format.js";
-import { Fail, Loading, PageHeader, Table } from "../ui.jsx";
+import { Fail, Loading, PageHeader, Pill, Table } from "../ui.jsx";
 
 export function ProductivityPage() {
   const { query, year, month } = useOutletContext();
@@ -22,7 +22,12 @@ export function ProductivityPage() {
         onRowClick={(row) => row.department && navigate(`/departments/${encodeURIComponent(row.department)}${query}`)}
         rows={data}
         columns={[
-          { key: "employeeName", label: "Name" },
+          { key: "employeeName", label: "Name", render: (r) => (
+            <span>
+              {r.employeeName}
+              {r.missingSalary && <Pill tone="bad">No salary</Pill>}
+            </span>
+          ) },
           { key: "department", label: "Department" },
           { key: "designation", label: "Role" },
           { key: "billableHours", label: "Billable", align: "right", render: (r) => formatHours(r.billableHours) },

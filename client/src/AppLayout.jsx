@@ -98,9 +98,17 @@ function UploadBar({ onDone }) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const hasFile = [...data.values()].some((v) => v instanceof File && v.size);
-    if (!hasFile) {
+    const files = [...data.entries()].filter(([, v]) => v instanceof File && v.size);
+    if (!files.length) {
       setMessage({ tone: "bad", text: "Choose at least one spreadsheet." });
+      return;
+    }
+    const bad = files.find(([, v]) => !/\.xlsx?$/i.test(v.name));
+    if (bad) {
+      setMessage({
+        tone: "bad",
+        text: `${bad[1].name} is not an Excel workbook. The agency files are .xlsx — a CSV or PDF will be rejected.`,
+      });
       return;
     }
     setBusy(true);
@@ -108,11 +116,22 @@ function UploadBar({ onDone }) {
     try {
       const result = await apiSend("/api/upload", { method: "POST", form: data });
       const bits = (result.ingested || []).map((i) => `${i.kind}: ${i.rows} rows`);
-      setMessage({ tone: "good", text: `Loaded ${bits.join("; ")}.` });
+      const gaps = (result.issues || []).length;
+      setMessage({
+        tone: gaps ? "bad" : "good",
+        text: `Loaded ${bits.join("; ") || "files"}.${gaps ? ` ${gaps} data gap(s) flagged.` : ""}`,
+      });
       form.reset();
       onDone?.();
     } catch (err) {
-      setMessage({ tone: "bad", text: err.message });
+      const extra = err.body || {};
+      const detail =
+        extra.detected && extra.expected
+          ? ` This file looks like a ${extra.detected} sheet, not a ${extra.expected} file.`
+          : extra.filename
+            ? ` (${extra.filename})`
+            : "";
+      setMessage({ tone: "bad", text: `${err.message}${detail}` });
     } finally {
       setBusy(false);
     }

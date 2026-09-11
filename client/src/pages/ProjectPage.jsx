@@ -1,7 +1,7 @@
 import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { useApi } from "../api.js";
 import { displayName, formatAed, formatHours, formatPct, monthLabel } from "../format.js";
-import { Fail, Loading, PageHeader, Stat, StatGrid, Table, marginTone } from "../ui.jsx";
+import { Fail, Loading, Note, PageHeader, Pill, Stat, StatGrid, Table, marginTone } from "../ui.jsx";
 
 export function ProjectPage() {
   const { refCode } = useParams();
@@ -27,6 +27,12 @@ export function ProjectPage() {
           {data.status ? ` · ${data.status}` : ""} · {period}
         </p>
       </PageHeader>
+      {data.missingPrice && (
+        <Note tone="warn">
+          No project-price row for <span className="font-medium">{data.refCode}</span>. Hours and
+          cost are still shown; revenue, profit and margin cannot be calculated.
+        </Note>
+      )}
       <StatGrid>
         <Stat label="Price" value={formatAed(data.priceAed)} />
         <Stat label="Hours" value={formatHours(data.hours)} />
@@ -52,7 +58,12 @@ export function ProjectPage() {
         empty="No one logged time here in the period."
         rows={data.employees}
         columns={[
-          { key: "employeeName", label: "Name" },
+          { key: "employeeName", label: "Name", render: (r) => (
+            <span>
+              {r.employeeName}
+              {r.missingSalary && <Pill tone="bad">No salary</Pill>}
+            </span>
+          ) },
           { key: "department", label: "Department" },
           { key: "hours", label: "Hours", align: "right", render: (r) => formatHours(r.hours) },
           { key: "costAed", label: "Cost", align: "right", render: (r) => formatAed(r.costAed) },

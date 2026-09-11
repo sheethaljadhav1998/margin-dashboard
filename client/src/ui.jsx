@@ -68,8 +68,54 @@ export function Table({ columns, rows, onRowClick, empty = "Nothing to show for 
 }
 
 export function Note({ children, tone = "muted" }) {
-  const cls = tone === "bad" ? "border-bad text-bad" : "border-line text-muted";
+  const cls =
+    tone === "bad"
+      ? "border-bad/40 bg-bad/5 text-bad"
+      : tone === "warn"
+        ? "border-line bg-paper text-ink"
+        : "border-line text-muted";
   return <div className={`mb-6 border px-4 py-3 text-sm ${cls}`}>{children}</div>;
+}
+
+export function Pill({ children, tone = "muted" }) {
+  const cls =
+    tone === "bad"
+      ? "bg-bad/10 text-bad"
+      : tone === "good"
+        ? "bg-good/10 text-good"
+        : "bg-paper text-muted";
+  return <span className={`ml-2 inline-block rounded px-1.5 py-0.5 text-[11px] ${cls}`}>{children}</span>;
+}
+
+export function IssuesList({ issues }) {
+  if (!issues?.length) return null;
+  const missingSalary = issues.filter((i) => i.type === "missing_salary");
+  const missingPrice = issues.filter((i) => i.type === "missing_price");
+  return (
+    <Note tone="warn">
+      <p className="font-medium text-ink">The numbers are incomplete</p>
+      {missingSalary.length > 0 && (
+        <p className="mt-1">
+          Logged time with no salary row:{" "}
+          {missingSalary
+            .map((i) => i.employeeName || i.employeeNo)
+            .filter((v, i, a) => a.indexOf(v) === i)
+            .join(", ")}
+          . Those hours are shown, but they do not get a cost rate.
+        </p>
+      )}
+      {missingPrice.length > 0 && (
+        <p className="mt-1">
+          Billable ref codes with no project price:{" "}
+          {missingPrice
+            .map((i) => i.refCode)
+            .filter((v, i, a) => a.indexOf(v) === i)
+            .join(", ")}
+          . Cost is still allocated; revenue is blank.
+        </p>
+      )}
+    </Note>
+  );
 }
 
 export function Loading() {
@@ -77,7 +123,15 @@ export function Loading() {
 }
 
 export function Fail({ error }) {
-  return <Note tone="bad">{error?.message || "Could not load this page."}</Note>;
+  const extra = error?.body;
+  return (
+    <Note tone="bad">
+      {error?.message || "Could not load this page."}
+      {extra?.detected && extra?.expected
+        ? ` Detected a ${extra.detected} file where a ${extra.expected} file was expected.`
+        : null}
+    </Note>
+  );
 }
 
 export function marginTone(value) {

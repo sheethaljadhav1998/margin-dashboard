@@ -1,7 +1,7 @@
 import { Link, useOutletContext, useParams } from "react-router-dom";
 import { useApi } from "../api.js";
 import { formatAed, formatHours, formatPct, monthLabel } from "../format.js";
-import { Fail, Loading, PageHeader, Stat, StatGrid, Table } from "../ui.jsx";
+import { Fail, Loading, PageHeader, Pill, Stat, StatGrid, Table } from "../ui.jsx";
 
 export function DepartmentPage() {
   const { department } = useParams();
@@ -39,7 +39,12 @@ export function DepartmentPage() {
         empty="No one in this department logged time in the period."
         rows={data.employees}
         columns={[
-          { key: "employeeName", label: "Name" },
+          { key: "employeeName", label: "Name", render: (r) => (
+            <span>
+              {r.employeeName}
+              {r.missingSalary && <Pill tone="bad">No salary</Pill>}
+            </span>
+          ) },
           { key: "designation", label: "Role" },
           { key: "hours", label: "Hours", align: "right", render: (r) => formatHours(r.hours) },
           { key: "billableHours", label: "Billable", align: "right", render: (r) => formatHours(r.billableHours) },
