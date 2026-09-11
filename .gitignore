@@ -7,7 +7,5 @@ dist/
 build/
 .env
 .env.local
-data/
-docs/
 server/data/
 client/dist/

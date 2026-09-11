@@ -4,7 +4,10 @@
   "type": "module",
   "description": "Ingestion, SQLite persistence, and calculation API for the Margin Dashboard.",
   "scripts": {
-    "inspect": "node scripts/inspect-data.js"
+    "inspect": "node scripts/inspect-data.js",
+    "self-check": "node scripts/self-check.js",
+    "test": "node --test calc/*.test.js ingest/*.test.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "xlsx": "^0.18.5"

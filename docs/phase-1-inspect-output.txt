@@ -1,0 +1,783 @@
+
+==============================================================================
+MARGIN DASHBOARD — PHASE 1 DATA INSPECTION
+==============================================================================
+sample dir: /Users/sheethal/Desktop/margin-dashboard/data/sample
+files: project-prices-2025.xlsx, salaries-2025.xlsx, timesheet-2025.xlsx
+xlsx read options: cellDates=false, cellNF=true, cellText=true
+type legend: n=number, s=string, b=boolean, d=date, e=error, z=blank/missing
+
+==============================================================================
+FILE: project-prices-2025.xlsx
+==============================================================================
+path: /Users/sheethal/Desktop/margin-dashboard/data/sample/project-prices-2025.xlsx
+size: 2256 bytes
+sheets: Projects
+
+--- Sheet "Projects" ------------------------------------------------------
+used range: A1:F12  (12 rows × 6 cols, 0-based 0:11 × 0:5)
+detected header row: Excel row 1 (0-based 0), score 106
+merged regions: 0
+
+Column headers:
+  A1: Ref Code
+  B1: Project (Billable) Name
+  C1: Project Price
+  D1: Sales month
+  E1: Category
+  F1: Status
+
+Raw first 16 rows (including any title / blank rows before the header):
+  r1: [s:"Ref Code" | s:"Project (Billable) Name" | s:"Project Price" | s:"Sales month" | s:"Category" | s:"Status"]  << HEADER
+  r2: [s:"Q2025001a" | s:"Meridian-Website-UIUXdesign… | n:"560000" | s:"January '25" | s:"Projects" | s:"in progress"]
+  r3: [s:"Q2025004c" | s:"Alwasl-App-UIUXdesign-Devel… | n:"900000" | s:"February '25" | s:"Projects" | s:"in progress"]
+  r4: [s:"Q2025009b" | s:"Bayside-Website-UIUXdesign-… | n:"330000" | s:"March '25" | s:"Projects" | s:"completed"]
+  r5: [s:"Q2025014d" | s:"NorthStar-Portal-Developmen… | n:"690000" | s:"April '25" | s:"Projects" | s:"in progress"]
+  r6: [s:"Q2025021e" | s:"Lumen-Website-UIUXdesign-De… | n:"250000" | s:"May '25" | s:"Projects" | s:"completed"]
+  r7: [s:"Q2025027f" | s:"Harbourline-App-UIUXdesign-… | n:"980000" | s:"June '25" | s:"Projects" | s:"in progress"]
+  r8: [s:"Q2025033g" | s:"Verdant-Website-Redesign-08… | n:"300000" | s:"July '25" | s:"Projects" | s:"completed"]
+  r9: [s:"Q2025041h" | s:"Cobalt-Dashboard-Developmen… | n:"760000" | s:"August '25" | s:"Projects" | s:"in progress"]
+  r10: [s:"E2025050a" | s:"Meridian-Enhancement-SEO-12… | n:"92000" | s:"September '25" | s:"Enhancements" | s:"completed"]
+  r11: [s:"E2025055b" | s:"Bayside-Enhancement-Booking… | n:"104000" | s:"October '25" | s:"Enhancements" | s:"in progress"]
+  r12: [s:"H2025060c" | s:"Alwasl-Annual-Hosting-2025" | n:"46000" | s:"November '25" | s:"Hosting" | s:"completed"]
+
+Data rows below header: 11
+
+How blanks and dashes appear (counts over data rows):
+  A "Ref Code": values=11, no blanks/dashes
+  B "Project (Billable) Name": values=11, no blanks/dashes
+  C "Project Price": values=11, no blanks/dashes
+  D "Sales month": values=11, no blanks/dashes
+  E "Category": values=11, no blanks/dashes
+  F "Status": values=11, no blanks/dashes
+
+Per-column types, number formats, formulas, samples:
+
+  A "Ref Code"
+    excel types: {"s":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 11
+    sample r2: t=s v="Q2025001a" w="Q2025001a" z="General"
+    sample r3: t=s v="Q2025004c" w="Q2025004c" z="General"
+    sample r4: t=s v="Q2025009b" w="Q2025009b" z="General"
+    sample r5: t=s v="Q2025014d" w="Q2025014d" z="General"
+    sample r6: t=s v="Q2025021e" w="Q2025021e" z="General"
+
+  B "Project (Billable) Name"
+    excel types: {"s":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 11
+    sample r2: t=s v="Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf" w="Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf" z="General"
+    sample r3: t=s v="Alwasl-App-UIUXdesign-Development-03022025-COMMERCIAL.pdf" w="Alwasl-App-UIUXdesign-Development-03022025-COMMERCIAL.pdf" z="General"
+    sample r4: t=s v="Bayside-Website-UIUXdesign-Development-19032025-COMMERCIAL.pdf" w="Bayside-Website-UIUXdesign-Development-19032025-COMMERCIAL.pdf" z="General"
+    sample r5: t=s v="NorthStar-Portal-Development-02042025-COMMERCIAL.pdf" w="NorthStar-Portal-Development-02042025-COMMERCIAL.pdf" z="General"
+    sample r6: t=s v="Lumen-Website-UIUXdesign-Development-11052025-COMMERCIAL.pdf" w="Lumen-Website-UIUXdesign-Development-11052025-COMMERCIAL.pdf" z="General"
+
+  C "Project Price"
+    excel types: {"n":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 11
+    sample r2: t=n v=560000 w="560000" z="General"
+    sample r3: t=n v=900000 w="900000" z="General"
+    sample r4: t=n v=330000 w="330000" z="General"
+    sample r5: t=n v=690000 w="690000" z="General"
+    sample r6: t=n v=250000 w="250000" z="General"
+
+  D "Sales month"
+    excel types: {"s":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 11
+    sample r2: t=s v="January '25" w="January '25" z="General"
+    sample r3: t=s v="February '25" w="February '25" z="General"
+    sample r4: t=s v="March '25" w="March '25" z="General"
+    sample r5: t=s v="April '25" w="April '25" z="General"
+    sample r6: t=s v="May '25" w="May '25" z="General"
+
+  E "Category"
+    excel types: {"s":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 3
+    sample r2: t=s v="Projects" w="Projects" z="General"
+    sample r3: t=s v="Projects" w="Projects" z="General"
+    sample r4: t=s v="Projects" w="Projects" z="General"
+    sample r5: t=s v="Projects" w="Projects" z="General"
+    sample r6: t=s v="Projects" w="Projects" z="General"
+
+  F "Status"
+    excel types: {"s":11}
+    emptiness:   {"value":11}
+    number formats: {"General":11}
+    distinct value-shapes: 2
+    sample r2: t=s v="in progress" w="in progress" z="General"
+    sample r3: t=s v="in progress" w="in progress" z="General"
+    sample r4: t=s v="completed" w="completed" z="General"
+    sample r5: t=s v="in progress" w="in progress" z="General"
+    sample r6: t=s v="completed" w="completed" z="General"
+
+--- Distinct values (categorical columns) in "Projects" -------------------
+
+  A "Ref Code" (11 distinct):
+    "Q2025001a"  ×1
+    "Q2025004c"  ×1
+    "Q2025009b"  ×1
+    "Q2025014d"  ×1
+    "Q2025021e"  ×1
+    "Q2025027f"  ×1
+    "Q2025033g"  ×1
+    "Q2025041h"  ×1
+    "E2025050a"  ×1
+    "E2025055b"  ×1
+    "H2025060c"  ×1
+
+  B "Project (Billable) Name" (11 distinct):
+    "Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf"  ×1
+    "Alwasl-App-UIUXdesign-Development-03022025-COMMERCIAL.pdf"  ×1
+    "Bayside-Website-UIUXdesign-Development-19032025-COMMERCIAL.pdf"  ×1
+    "NorthStar-Portal-Development-02042025-COMMERCIAL.pdf"  ×1
+    "Lumen-Website-UIUXdesign-Development-11052025-COMMERCIAL.pdf"  ×1
+    "Harbourline-App-UIUXdesign-15062025-COMMERCIAL.pdf"  ×1
+    "Verdant-Website-Redesign-08072025-COMMERCIAL.pdf"  ×1
+    "Cobalt-Dashboard-Development-21082025-COMMERCIAL.pdf"  ×1
+    "Meridian-Enhancement-SEO-12092025"  ×1
+    "Bayside-Enhancement-Booking-Module-03102025"  ×1
+    "Alwasl-Annual-Hosting-2025"  ×1
+
+  E "Category" (3 distinct):
+    "Projects"  ×8
+    "Enhancements"  ×2
+    "Hosting"  ×1
+
+  F "Status" (2 distinct):
+    "in progress"  ×6
+    "completed"  ×5
+
+--- Date-like columns in "Projects" ---------------------------------------
+
+  Distinct Month/date shapes in D "Sales month":
+    t=s v="January '25" w="January '25" z="General" excelSerialAs=n/a count=1 e.g. row 2
+    t=s v="February '25" w="February '25" z="General" excelSerialAs=n/a count=1 e.g. row 3
+    t=s v="March '25" w="March '25" z="General" excelSerialAs=n/a count=1 e.g. row 4
+    t=s v="April '25" w="April '25" z="General" excelSerialAs=n/a count=1 e.g. row 5
+    t=s v="May '25" w="May '25" z="General" excelSerialAs=n/a count=1 e.g. row 6
+    t=s v="June '25" w="June '25" z="General" excelSerialAs=n/a count=1 e.g. row 7
+    t=s v="July '25" w="July '25" z="General" excelSerialAs=n/a count=1 e.g. row 8
+    t=s v="August '25" w="August '25" z="General" excelSerialAs=n/a count=1 e.g. row 9
+    t=s v="September '25" w="September '25" z="General" excelSerialAs=n/a count=1 e.g. row 10
+    t=s v="October '25" w="October '25" z="General" excelSerialAs=n/a count=1 e.g. row 11
+    t=s v="November '25" w="November '25" z="General" excelSerialAs=n/a count=1 e.g. row 12
+
+--- Structural oddities in "Projects" -------------------------------------
+  none flagged beyond normal tabular data
+
+==============================================================================
+FILE: salaries-2025.xlsx
+==============================================================================
+path: /Users/sheethal/Desktop/margin-dashboard/data/sample/salaries-2025.xlsx
+size: 2377 bytes
+sheets: Salary
+
+--- Sheet "Salary" --------------------------------------------------------
+used range: A1:N14  (14 rows × 14 cols, 0-based 0:13 × 0:13)
+detected header row: Excel row 2 (0-based 1), score 74
+merged regions: 0
+
+Column headers:
+  A2: Employee No.
+  B2: Employee Name
+  C2: January
+  D2: February
+  E2: March
+  F2: April
+  G2: May
+  H2: June
+  I2: July
+  J2: August
+  K2: September
+  L2: October
+  M2: November
+  N2: December
+
+Raw first 16 rows (including any title / blank rows before the header):
+  r1: [· | s:"Salary Overview 2025 (AED)" | · | · | · | · | · | · | · | · | · | · | · | ·]
+  r2: [s:"Employee No." | s:"Employee Name" | s:"January" | s:"February" | s:"March" | s:"April" | s:"May" | s:"June" | s:"July" | s:"August" | s:"September" | s:"October" | s:"November" | s:"December"]  << HEADER
+  r3: [s:"10201" | s:"Ayesha Rahman" | n:"18000" | n:"18000" | n:"18000" | n:"18000" | n:"18000" | n:"18000" | n:"18500" | n:"18500" | n:"18500" | n:"18500" | n:"18500" | n:"18500"]
+  r4: [s:"10202" | s:"Rohit Menon" | n:"12000" | n:"12000" | n:"12000" | n:"12000" | n:"12000" | n:"12000" | n:"12500" | n:"12500" | n:"12500" | n:"12500" | n:"12500" | n:"12500"]
+  r5: [s:"10203" | s:"Lina Haddad" | n:"22000" | n:"22000" | n:"22000" | n:"22000" | n:"22000" | n:"22000" | n:"22500" | n:"22500" | n:"22500" | n:"22500" | n:"22500" | n:"22500"]
+  r6: [s:"10204" | s:"Tariq Aziz" | n:"17000" | n:"17000" | n:"17000" | n:"17000" | n:"17000" | n:"17000" | n:"17500" | n:"17500" | n:"17500" | n:"17500" | n:"17500" | n:"17500"]
+  r7: [s:"10205" | s:"Grace Fernandes" | n:"11000" | n:"11000" | n:"11000" | n:"11000" | n:"11000" | n:"11000" | n:"11500" | n:"11500" | n:"11500" | n:"11500" | n:"11500" | n:"11500"]
+  r8: [s:"10206" | s:"Imran Sheikh" | n:"19000" | n:"19000" | n:"19000" | n:"19000" | n:"19000" | n:"19000" | n:"19500" | n:"19500" | n:"19500" | n:"19500" | n:"19500" | n:"19500"]
+  r9: [s:"10207" | s:"Nadia Kapoor" | n:"12500" | n:"12500" | n:"12500" | n:"12500" | n:"12500" | n:"12500" | n:"13000" | n:"13000" | n:"13000" | n:"13000" | n:"13000" | n:"13000"]
+  r10: [s:"10208" | s:"Kevin D'Souza" | n:"15000" | n:"15000" | n:"15000" | n:"15000" | n:"15000" | n:"15000" | n:"15500" | n:"15500" | n:"15500" | n:"15500" | n:"15500" | n:"15500"]
+  r11: [s:"10209" | s:"Sara Al Marzooqi" | n:"9500" | n:"9500" | n:"9500" | n:"9500" | n:"9500" | n:"9500" | n:"10000" | n:"10000" | n:"10000" | n:"10000" | n:"10000" | n:"10000"]
+  r12: [s:"10210" | s:"Vikram Nair" | n:"16000" | n:"16000" | n:"16000" | n:"16000" | n:"16000" | n:"16000" | n:"16500" | n:"16500" | n:"16500" | n:"16500" | n:"16500" | n:"16500"]
+  r13: [s:"00101" | s:"Hana Yousef" | n:"20000" | n:"20000" | n:"20000" | n:"20000" | n:"20000" | n:"20000" | n:"20500" | n:"20500" | n:"20500" | n:"20500" | n:"20500" | n:"20500"]
+  r14: [s:"00102" | s:"Omar Zayed" | n:"25000" | n:"25000" | n:"25000" | n:"25000" | n:"25000" | n:"25000" | n:"25500" | n:"25500" | n:"25500" | n:"25500" | n:"25500" | n:"25500"]
+
+Data rows below header: 12
+
+How blanks and dashes appear (counts over data rows):
+  A "Employee No.": values=12, no blanks/dashes
+  B "Employee Name": values=12, no blanks/dashes
+  C "January": values=12, no blanks/dashes
+  D "February": values=12, no blanks/dashes
+  E "March": values=12, no blanks/dashes
+  F "April": values=12, no blanks/dashes
+  G "May": values=12, no blanks/dashes
+  H "June": values=12, no blanks/dashes
+  I "July": values=12, no blanks/dashes
+  J "August": values=12, no blanks/dashes
+  K "September": values=12, no blanks/dashes
+  L "October": values=12, no blanks/dashes
+  M "November": values=12, no blanks/dashes
+  N "December": values=12, no blanks/dashes
+
+Per-column types, number formats, formulas, samples:
+
+  A "Employee No."
+    excel types: {"s":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=s v="10201" w="10201" z="General"
+    sample r4: t=s v="10202" w="10202" z="General"
+    sample r5: t=s v="10203" w="10203" z="General"
+    sample r6: t=s v="10204" w="10204" z="General"
+    sample r7: t=s v="10205" w="10205" z="General"
+
+  B "Employee Name"
+    excel types: {"s":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=s v="Ayesha Rahman" w="Ayesha Rahman" z="General"
+    sample r4: t=s v="Rohit Menon" w="Rohit Menon" z="General"
+    sample r5: t=s v="Lina Haddad" w="Lina Haddad" z="General"
+    sample r6: t=s v="Tariq Aziz" w="Tariq Aziz" z="General"
+    sample r7: t=s v="Grace Fernandes" w="Grace Fernandes" z="General"
+
+  C "January"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  D "February"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  E "March"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  F "April"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  G "May"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  H "June"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18000 w="18000" z="General"
+    sample r4: t=n v=12000 w="12000" z="General"
+    sample r5: t=n v=22000 w="22000" z="General"
+    sample r6: t=n v=17000 w="17000" z="General"
+    sample r7: t=n v=11000 w="11000" z="General"
+
+  I "July"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+  J "August"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+  K "September"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+  L "October"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+  M "November"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+  N "December"
+    excel types: {"n":12}
+    emptiness:   {"value":12}
+    number formats: {"General":12}
+    distinct value-shapes: 12
+    sample r3: t=n v=18500 w="18500" z="General"
+    sample r4: t=n v=12500 w="12500" z="General"
+    sample r5: t=n v=22500 w="22500" z="General"
+    sample r6: t=n v=17500 w="17500" z="General"
+    sample r7: t=n v=11500 w="11500" z="General"
+
+--- Distinct values (categorical columns) in "Salary" ---------------------
+
+  B "Employee Name" (12 distinct):
+    "Ayesha Rahman"  ×1
+    "Rohit Menon"  ×1
+    "Lina Haddad"  ×1
+    "Tariq Aziz"  ×1
+    "Grace Fernandes"  ×1
+    "Imran Sheikh"  ×1
+    "Nadia Kapoor"  ×1
+    "Kevin D'Souza"  ×1
+    "Sara Al Marzooqi"  ×1
+    "Vikram Nair"  ×1
+    "Hana Yousef"  ×1
+    "Omar Zayed"  ×1
+
+--- Date-like columns in "Salary" -----------------------------------------
+  (none — this sheet has no Month / Sales month value column)
+
+--- Structural oddities in "Salary" ---------------------------------------
+  • headers start on row 2, not row 1
+
+==============================================================================
+FILE: timesheet-2025.xlsx
+==============================================================================
+path: /Users/sheethal/Desktop/margin-dashboard/data/sample/timesheet-2025.xlsx
+size: 35870 bytes
+sheets: Timesheet
+
+--- Sheet "Timesheet" -----------------------------------------------------
+used range: A1:L563  (563 rows × 12 cols, 0-based 0:562 × 0:11)
+detected header row: Excel row 1 (0-based 0), score 212
+merged regions: 0
+
+Column headers:
+  A1: Month
+  B1: Employee No.
+  C1: Employee Name
+  D1: Type of Expense
+  E1: Department
+  F1: Designation
+  G1: Category
+  H1: Ref Code
+  I1: Project (Billable) / Task (Unbillable) Name
+  J1: Company Name (Billable)/ Fixed Costs (Unbillable)
+  K1: Description
+  L1: Hours
+
+Raw first 16 rows (including any title / blank rows before the header):
+  r1: [s:"Month" | s:"Employee No." | s:"Employee Name" | s:"Type of Expense" | s:"Department" | s:"Designation" | s:"Category" | s:"Ref Code" | s:"Project (Billable) / Task (… | s:"Company Name (Billable)/ Fi… | s:"Description" | s:"Hours"]  << HEADER
+  r2: [s:"January 2025" | s:"10201" | s:"Ayesha Rahman" | s:"DL" | s:"Design" | s:"Senior UI/UX Designer" | s:"FC - Leaves" | s:"FC - Leaves" | s:"Annual, Casual, Sick Leaves… | s:"Fixed Costs" | s:"leave" | n:"8"]
+  r3: [s:"January 2025" | s:"10201" | s:"Ayesha Rahman" | s:"DL" | s:"Design" | s:"Senior UI/UX Designer" | s:"FC - Meetings" | s:"FC - Meetings" | s:"Admin/Management/Internal M… | s:"Fixed Costs" | s:"internal + client sync" | n:"25"]
+  r4: [s:"January 2025" | s:"10201" | s:"Ayesha Rahman" | s:"DL" | s:"Design" | s:"Senior UI/UX Designer" | s:"FC - Learning" | s:"FC - Learning" | s:"Self learning / training" | s:"Fixed Costs" | s:"internal" | n:"7.1"]
+  r5: [s:"January 2025" | s:"10201" | s:"Ayesha Rahman" | s:"DL" | s:"Design" | s:"Senior UI/UX Designer" | s:"Projects" | s:"Q2025001a" | s:"Meridian-Website-UIUXdesign… | s:"Meridian Group" | s:"design iterations" | n:"135.9"]
+  r6: [s:"January 2025" | s:"10202" | s:"Rohit Menon" | s:"DL" | s:"Design" | s:"UI/UX Designer" | s:"FC - Leaves" | s:"FC - Leaves" | s:"Annual, Casual, Sick Leaves… | s:"Fixed Costs" | s:"leave" | n:"24"]
+  r7: [s:"January 2025" | s:"10202" | s:"Rohit Menon" | s:"DL" | s:"Design" | s:"UI/UX Designer" | s:"FC - Meetings" | s:"FC - Meetings" | s:"Admin/Management/Internal M… | s:"Fixed Costs" | s:"internal + client sync" | n:"10.3"]
+  r8: [s:"January 2025" | s:"10202" | s:"Rohit Menon" | s:"DL" | s:"Design" | s:"UI/UX Designer" | s:"Projects" | s:"Q2025001a" | s:"Meridian-Website-UIUXdesign… | s:"Meridian Group" | s:"API integration" | n:"141.7"]
+  r9: [s:"January 2025" | s:"10203" | s:"Lina Haddad" | s:"DL" | s:"Design" | s:"Team Lead - Design" | s:"FC - Leaves" | s:"FC - Leaves" | s:"Annual, Casual, Sick Leaves… | s:"Fixed Costs" | s:"leave" | n:"16"]
+  r10: [s:"January 2025" | s:"10203" | s:"Lina Haddad" | s:"DL" | s:"Design" | s:"Team Lead - Design" | s:"FC - Meetings" | s:"FC - Meetings" | s:"Admin/Management/Internal M… | s:"Fixed Costs" | s:"internal + client sync" | n:"7.2"]
+  r11: [s:"January 2025" | s:"10203" | s:"Lina Haddad" | s:"DL" | s:"Design" | s:"Team Lead - Design" | s:"FC - Bug Fixes" | s:"FC - Bug Fixes" | s:"Bug fixing - internal" | s:"Fixed Costs" | s:"internal" | n:"10.2"]
+  r12: [s:"January 2025" | s:"10203" | s:"Lina Haddad" | s:"DL" | s:"Design" | s:"Team Lead - Design" | s:"Projects" | s:"Q2025001a" | s:"Meridian-Website-UIUXdesign… | s:"Meridian Group" | s:"review + QA" | n:"142.6"]
+  r13: [s:"January 2025" | s:"10204" | s:"Tariq Aziz" | s:"DL" | s:"Frontend" | s:"Senior Frontend Developer" | s:"FC - Meetings" | s:"FC - Meetings" | s:"Admin/Management/Internal M… | s:"Fixed Costs" | s:"internal + client sync" | n:"25.5"]
+  r14: [s:"January 2025" | s:"10204" | s:"Tariq Aziz" | s:"DL" | s:"Frontend" | s:"Senior Frontend Developer" | s:"Projects" | s:"Q2025001a" | s:"Meridian-Website-UIUXdesign… | s:"Meridian Group" | s:"API integration" | n:"135.5"]
+  r15: [s:"January 2025" | s:"10205" | s:"Grace Fernandes" | s:"DL" | s:"Frontend" | s:"Frontend Developer" | s:"FC - Meetings" | s:"FC - Meetings" | s:"Admin/Management/Internal M… | s:"Fixed Costs" | s:"internal + client sync" | n:"17.4"]
+  r16: [s:"January 2025" | s:"10205" | s:"Grace Fernandes" | s:"DL" | s:"Frontend" | s:"Frontend Developer" | s:"Tentwenty" | s:"Tentwenty" | s:"Tentwenty internal product" | s:"Fixed Costs" | s:"internal" | n:"10.1"]
+
+Data rows below header: 562
+
+How blanks and dashes appear (counts over data rows):
+  A "Month": values=562, no blanks/dashes
+  B "Employee No.": values=562, no blanks/dashes
+  C "Employee Name": values=562, no blanks/dashes
+  D "Type of Expense": values=562, no blanks/dashes
+  E "Department": values=562, no blanks/dashes
+  F "Designation": values=562, no blanks/dashes
+  G "Category": values=562, no blanks/dashes
+  H "Ref Code": values=562, no blanks/dashes
+  I "Project (Billable) / Task (Unbillable) Name": values=562, no blanks/dashes
+  J "Company Name (Billable)/ Fixed Costs (Unbillable)": values=562, no blanks/dashes
+  K "Description": values=562, no blanks/dashes
+  L "Hours": values=562, no blanks/dashes
+
+Per-column types, number formats, formulas, samples:
+
+  A "Month"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 12
+    sample r2: t=s v="January 2025" w="January 2025" z="General"
+    sample r3: t=s v="January 2025" w="January 2025" z="General"
+    sample r4: t=s v="January 2025" w="January 2025" z="General"
+    sample r5: t=s v="January 2025" w="January 2025" z="General"
+    sample r6: t=s v="January 2025" w="January 2025" z="General"
+
+  B "Employee No."
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 12
+    sample r2: t=s v="10201" w="10201" z="General"
+    sample r3: t=s v="10201" w="10201" z="General"
+    sample r4: t=s v="10201" w="10201" z="General"
+    sample r5: t=s v="10201" w="10201" z="General"
+    sample r6: t=s v="10202" w="10202" z="General"
+
+  C "Employee Name"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 12
+    sample r2: t=s v="Ayesha Rahman" w="Ayesha Rahman" z="General"
+    sample r3: t=s v="Ayesha Rahman" w="Ayesha Rahman" z="General"
+    sample r4: t=s v="Ayesha Rahman" w="Ayesha Rahman" z="General"
+    sample r5: t=s v="Ayesha Rahman" w="Ayesha Rahman" z="General"
+    sample r6: t=s v="Rohit Menon" w="Rohit Menon" z="General"
+
+  D "Type of Expense"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 2
+    sample r2: t=s v="DL" w="DL" z="General"
+    sample r3: t=s v="DL" w="DL" z="General"
+    sample r4: t=s v="DL" w="DL" z="General"
+    sample r5: t=s v="DL" w="DL" z="General"
+    sample r6: t=s v="DL" w="DL" z="General"
+
+  E "Department"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 6
+    sample r2: t=s v="Design" w="Design" z="General"
+    sample r3: t=s v="Design" w="Design" z="General"
+    sample r4: t=s v="Design" w="Design" z="General"
+    sample r5: t=s v="Design" w="Design" z="General"
+    sample r6: t=s v="Design" w="Design" z="General"
+
+  F "Designation"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 12
+    sample r2: t=s v="Senior UI/UX Designer" w="Senior UI/UX Designer" z="General"
+    sample r3: t=s v="Senior UI/UX Designer" w="Senior UI/UX Designer" z="General"
+    sample r4: t=s v="Senior UI/UX Designer" w="Senior UI/UX Designer" z="General"
+    sample r5: t=s v="Senior UI/UX Designer" w="Senior UI/UX Designer" z="General"
+    sample r6: t=s v="UI/UX Designer" w="UI/UX Designer" z="General"
+
+  G "Category"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 11
+    sample r2: t=s v="FC - Leaves" w="FC - Leaves" z="General"
+    sample r3: t=s v="FC - Meetings" w="FC - Meetings" z="General"
+    sample r4: t=s v="FC - Learning" w="FC - Learning" z="General"
+    sample r5: t=s v="Projects" w="Projects" z="General"
+    sample r6: t=s v="FC - Leaves" w="FC - Leaves" z="General"
+
+  H "Ref Code"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 19
+    sample r2: t=s v="FC - Leaves" w="FC - Leaves" z="General"
+    sample r3: t=s v="FC - Meetings" w="FC - Meetings" z="General"
+    sample r4: t=s v="FC - Learning" w="FC - Learning" z="General"
+    sample r5: t=s v="Q2025001a" w="Q2025001a" z="General"
+    sample r6: t=s v="FC - Leaves" w="FC - Leaves" z="General"
+
+  I "Project (Billable) / Task (Unbillable) Name"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 19
+    sample r2: t=s v="Annual, Casual, Sick Leaves, Holiday" w="Annual, Casual, Sick Leaves, Holiday" z="General"
+    sample r3: t=s v="Admin/Management/Internal Meeting/Team Assisting" w="Admin/Management/Internal Meeting/Team Assisting" z="General"
+    sample r4: t=s v="Self learning / training" w="Self learning / training" z="General"
+    sample r5: t=s v="Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf" w="Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf" z="General"
+    sample r6: t=s v="Annual, Casual, Sick Leaves, Holiday" w="Annual, Casual, Sick Leaves, Holiday" z="General"
+
+  J "Company Name (Billable)/ Fixed Costs (Unbillable)"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 9
+    sample r2: t=s v="Fixed Costs" w="Fixed Costs" z="General"
+    sample r3: t=s v="Fixed Costs" w="Fixed Costs" z="General"
+    sample r4: t=s v="Fixed Costs" w="Fixed Costs" z="General"
+    sample r5: t=s v="Meridian Group" w="Meridian Group" z="General"
+    sample r6: t=s v="Fixed Costs" w="Fixed Costs" z="General"
+
+  K "Description"
+    excel types: {"s":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 9
+    sample r2: t=s v="leave" w="leave" z="General"
+    sample r3: t=s v="internal + client sync" w="internal + client sync" z="General"
+    sample r4: t=s v="internal" w="internal" z="General"
+    sample r5: t=s v="design iterations" w="design iterations" z="General"
+    sample r6: t=s v="leave" w="leave" z="General"
+
+  L "Hours"
+    excel types: {"n":562}
+    emptiness:   {"value":562}
+    number formats: {"General":562}
+    distinct value-shapes: 360
+    sample r2: t=n v=8 w="8" z="General"
+    sample r3: t=n v=25 w="25" z="General"
+    sample r4: t=n v=7.1 w="7.1" z="General"
+    sample r5: t=n v=135.9 w="135.9" z="General"
+    sample r6: t=n v=24 w="24" z="General"
+
+--- Distinct values (categorical columns) in "Timesheet" ------------------
+
+  C "Employee Name" (12 distinct):
+    "Ayesha Rahman"  ×56
+    "Lina Haddad"  ×56
+    "Tariq Aziz"  ×52
+    "Nadia Kapoor"  ×52
+    "Sara Al Marzooqi"  ×52
+    "Grace Fernandes"  ×49
+    "Vikram Nair"  ×49
+    "Imran Sheikh"  ×48
+    "Kevin D'Souza"  ×45
+    "Rohit Menon"  ×44
+    "Hana Yousef"  ×30
+    "Omar Zayed"  ×29
+
+  D "Type of Expense" (2 distinct):
+    "DL"  ×503
+    "IDL"  ×59
+
+  E "Department" (6 distinct):
+    "Design"  ×156
+    "Backend"  ×149
+    "Frontend"  ×101
+    "Management"  ×59
+    "QA"  ×52
+    "App"  ×45
+
+  F "Designation" (12 distinct):
+    "Senior UI/UX Designer"  ×56
+    "Team Lead - Design"  ×56
+    "Senior Frontend Developer"  ×52
+    "Backend Developer"  ×52
+    "QA Engineer"  ×52
+    "Frontend Developer"  ×49
+    "DevOps Engineer"  ×49
+    "Senior Backend Developer"  ×48
+    "Mobile Developer"  ×45
+    "UI/UX Designer"  ×44
+    "Account Manager"  ×30
+    "Operations Lead"  ×29
+
+  G "Category" (11 distinct):
+    "Projects"  ×183
+    "FC - Meetings"  ×144
+    "FC - Leaves"  ×76
+    "Enhancements"  ×30
+    "FC - Others"  ×26
+    "FC - SEO/Marketing"  ×22
+    "FC - Idle"  ×21
+    "FC - Bug Fixes"  ×19
+    "Tentwenty"  ×17
+    "FC - Learning"  ×14
+    "Hosting"  ×10
+
+  H "Ref Code" (19 distinct):
+    "FC - Meetings"  ×144
+    "FC - Leaves"  ×76
+    "Q2025001a"  ×35
+    "Q2025009b"  ×28
+    "Q2025004c"  ×27
+    "FC - Others"  ×26
+    "FC - SEO/Marketing"  ×22
+    "FC - Idle"  ×21
+    "Q2025014d"  ×21
+    "FC - Bug Fixes"  ×19
+    "Q2025021e"  ×19
+    "Q2025033g"  ×19
+    "Q2025041h"  ×18
+    "E2025050a"  ×18
+    "Tentwenty"  ×17
+    "Q2025027f"  ×16
+    "FC - Learning"  ×14
+    "E2025055b"  ×12
+    "H2025060c"  ×10
+
+  I "Project (Billable) / Task (Unbillable) Name" (19 distinct):
+    "Admin/Management/Internal Meeting/Team Assisting"  ×144
+    "Annual, Casual, Sick Leaves, Holiday"  ×76
+    "Meridian-Website-UIUXdesign-Development-14012025-COMMERCIAL.pdf"  ×35
+    "Bayside-Website-UIUXdesign-Development-19032025-COMMERCIAL.pdf"  ×28
+    "Alwasl-App-UIUXdesign-Development-03022025-COMMERCIAL.pdf"  ×27
+    "Misc internal work"  ×26
+    "Marketing and SEO support"  ×22
+    "Idle / bench time"  ×21
+    "NorthStar-Portal-Development-02042025-COMMERCIAL.pdf"  ×21
+    "Bug fixing - internal"  ×19
+    "Lumen-Website-UIUXdesign-Development-11052025-COMMERCIAL.pdf"  ×19
+    "Verdant-Website-Redesign-08072025-COMMERCIAL.pdf"  ×19
+    "Cobalt-Dashboard-Development-21082025-COMMERCIAL.pdf"  ×18
+    "Meridian-Enhancement-SEO-12092025"  ×18
+    "Tentwenty internal product"  ×17
+    "Harbourline-App-UIUXdesign-15062025-COMMERCIAL.pdf"  ×16
+    "Self learning / training"  ×14
+    "Bayside-Enhancement-Booking-Module-03102025"  ×12
+    "Alwasl-Annual-Hosting-2025"  ×10
+
+  J "Company Name (Billable)/ Fixed Costs (Unbillable)" (9 distinct):
+    "Fixed Costs"  ×339
+    "Meridian Group"  ×53
+    "Bayside Realty"  ×40
+    "Al Wasl Holding"  ×37
+    "NorthStar Energy"  ×21
+    "Lumen Studio"  ×19
+    "Verdant Foods"  ×19
+    "Cobalt Bank"  ×18
+    "Harbourline Ports"  ×16
+
+  K "Description" (9 distinct):
+    "internal + client sync"  ×144
+    "internal"  ×119
+    "leave"  ×76
+    "review + QA"  ×48
+    "design iterations"  ×43
+    "development"  ×36
+    "client feedback"  ×33
+    "revisions"  ×32
+    "API integration"  ×31
+
+--- Date-like columns in "Timesheet" --------------------------------------
+
+  Distinct Month/date shapes in A "Month":
+    t=s v="June 2025" w="June 2025" z="General" excelSerialAs=n/a count=54 e.g. row 226
+    t=s v="March 2025" w="March 2025" z="General" excelSerialAs=n/a count=50 e.g. row 83
+    t=s v="August 2025" w="August 2025" z="General" excelSerialAs=n/a count=50 e.g. row 329
+    t=s v="October 2025" w="October 2025" z="General" excelSerialAs=n/a count=50 e.g. row 426
+    t=s v="April 2025" w="April 2025" z="General" excelSerialAs=n/a count=49 e.g. row 133
+    t=s v="July 2025" w="July 2025" z="General" excelSerialAs=n/a count=49 e.g. row 280
+    t=s v="September 2025" w="September 2025" z="General" excelSerialAs=n/a count=47 e.g. row 379
+    t=s v="December 2025" w="December 2025" z="General" excelSerialAs=n/a count=46 e.g. row 518
+    t=s v="February 2025" w="February 2025" z="General" excelSerialAs=n/a count=44 e.g. row 39
+    t=s v="May 2025" w="May 2025" z="General" excelSerialAs=n/a count=44 e.g. row 182
+    t=s v="November 2025" w="November 2025" z="General" excelSerialAs=n/a count=42 e.g. row 476
+    t=s v="January 2025" w="January 2025" z="General" excelSerialAs=n/a count=37 e.g. row 2
+
+--- Structural oddities in "Timesheet" ------------------------------------
+  none flagged beyond normal tabular data
+
+==============================================================================
+JOIN-KEY PREVIEW (from distinct values, not ingested)
+==============================================================================
+timesheet employee names: 12 distinct
+timesheet employee numbers: 12 distinct
+salary employee names: 12 distinct
+timesheet ref codes: 19 distinct
+project-price ref codes: 11 distinct
+timesheet categories: 11 distinct
+project-price categories: 3 distinct
+
+Employee Name overlap (timesheet ∩ salary): 12
+  in timesheet but not salary (0): —
+  in salary but not timesheet (0): —
+
+Ref Code overlap (timesheet ∩ project prices): 11
+  in timesheet but not prices (8): FC - Leaves | FC - Meetings | FC - Learning | FC - Bug Fixes | Tentwenty | FC - SEO/Marketing | FC - Others | FC - Idle
+  in prices but not timesheet (0): —
+
+Timesheet categories:
+  Enhancements
+  FC - Bug Fixes
+  FC - Idle
+  FC - Learning
+  FC - Leaves
+  FC - Meetings
+  FC - Others
+  FC - SEO/Marketing
+  Hosting
+  Projects
+  Tentwenty
+
+==============================================================================
+END OF INSPECTION
+==============================================================================

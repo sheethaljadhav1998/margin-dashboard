@@ -4,7 +4,9 @@
   "description": "Local app that turns timesheet, salary, and project-price spreadsheets into a project-margin dashboard.",
   "scripts": {
     "inspect": "npm run inspect --prefix server",
-    "install:server": "npm install --prefix server"
+    "install:server": "npm install --prefix server",
+    "self-check": "npm run self-check --prefix server",
+    "test": "npm test --prefix server"
   },
   "engines": {
     "node": ">=18"
