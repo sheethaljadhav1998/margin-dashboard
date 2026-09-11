@@ -234,10 +234,11 @@ export function departmentsView(model, period = {}) {
   const byDept = new Map();
   for (const row of rows) {
     const dept = row.department || "Unspecified";
-    const bucket = byDept.get(dept) ?? { department: dept, hours: 0, billableHours: 0, costAed: 0 };
+    const bucket = byDept.get(dept) ?? { department: dept, hours: 0, billableHours: 0, costAed: 0, directCostAed: 0 };
     bucket.hours += row.hours;
     if (row.isBillable) bucket.billableHours += row.hours;
     bucket.costAed += row.loadedCost ?? 0;
+    bucket.directCostAed += (row.directRate ?? 0) * row.hours;
     byDept.set(dept, bucket);
   }
   return [...byDept.values()].sort((a, b) => b.hours - a.hours);
@@ -256,11 +257,13 @@ export function departmentView(model, department, period = {}) {
       hours: 0,
       billableHours: 0,
       costAed: 0,
+      directCostAed: 0,
       missingSalary: false,
     };
     e.hours += row.hours;
     if (row.isBillable) e.billableHours += row.hours;
     e.costAed += row.loadedCost ?? 0;
+    e.directCostAed += (row.directRate ?? 0) * row.hours;
     e.missingSalary = e.missingSalary || row.missingSalary;
     byEmp.set(row.employeeNo, e);
   }

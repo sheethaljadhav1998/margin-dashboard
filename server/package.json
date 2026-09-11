@@ -7,12 +7,16 @@
     "inspect": "node scripts/inspect-data.js",
     "self-check": "node scripts/self-check.js",
     "test": "node --test calc/*.test.js ingest/*.test.js",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
     "xlsx": "^0.18.5"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

@@ -287,3 +287,4 @@ function parseProjects(matrix, headerRow, filename) {
       return { year, month };
     }),
   };
+}

@@ -6,7 +6,8 @@
     "inspect": "npm run inspect --prefix server",
     "install:server": "npm install --prefix server",
     "self-check": "npm run self-check --prefix server",
-    "test": "npm test --prefix server"
+    "test": "npm test --prefix server",
+    "start": "npm start --prefix server"
   },
   "engines": {
     "node": ">=18"
