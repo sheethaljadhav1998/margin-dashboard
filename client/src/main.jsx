@@ -6,6 +6,7 @@ import { CategoriesPage } from "./pages/CategoriesPage.jsx";
 import { DashboardPage } from "./pages/DashboardPage.jsx";
 import { DepartmentPage } from "./pages/DepartmentPage.jsx";
 import { DepartmentsPage } from "./pages/DepartmentsPage.jsx";
+import { SettingsPage } from "./pages/SettingsPage.jsx";
 import { ProductivityPage } from "./pages/ProductivityPage.jsx";
 import { ProjectPage } from "./pages/ProjectPage.jsx";
 import "./index.css";
@@ -21,6 +22,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/departments/:department" element={<DepartmentPage />} />
           <Route path="/productivity" element={<ProductivityPage />} />
           <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

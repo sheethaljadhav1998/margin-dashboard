@@ -8,6 +8,7 @@ const NAV = [
   { to: "/departments", label: "Departments" },
   { to: "/productivity", label: "Productivity" },
   { to: "/categories", label: "Categories" },
+  { to: "/settings", label: "Settings" },
 ];
 
 export function AppLayout() {
