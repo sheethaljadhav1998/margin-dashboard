@@ -5,6 +5,7 @@ import { MONTHS, periodQuery } from "./format.js";
 
 const NAV = [
   { to: "/", label: "Dashboard", end: true },
+  { to: "/departments", label: "Departments" },
   { to: "/productivity", label: "Productivity" },
   { to: "/categories", label: "Categories" },
 ];

@@ -1,4 +1,4 @@
-import { Link, useOutletContext, useParams } from "react-router-dom";
+import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom";
 import { useApi } from "../api.js";
 import { displayName, formatAed, formatHours, formatPct, monthLabel } from "../format.js";
 import { Fail, Loading, PageHeader, Stat, StatGrid, Table, marginTone } from "../ui.jsx";
@@ -6,6 +6,7 @@ import { Fail, Loading, PageHeader, Stat, StatGrid, Table, marginTone } from "..
 export function ProjectPage() {
   const { refCode } = useParams();
   const { query, year, month } = useOutletContext();
+  const navigate = useNavigate();
   const { data, error, loading } = useApi(`/api/projects/${encodeURIComponent(refCode)}${query}`);
 
   if (loading) return <Loading />;
@@ -37,6 +38,7 @@ export function ProjectPage() {
       <h2 className="mb-3 text-lg font-semibold text-navy">Hours by department</h2>
       <Table
         empty="No hours on this project in the period."
+        onRowClick={(row) => navigate(`/departments/${encodeURIComponent(row.department)}${query}`)}
         rows={data.hoursByDepartment}
         columns={[
           { key: "department", label: "Department" },
@@ -45,7 +47,7 @@ export function ProjectPage() {
         ]}
       />
 
-      <h2 className="mt-8 mb-3 text-lg font-semibold text-navy">People on this project</h2>
+      <h2 className="mt-8 mb-3 text-lg font-semibold text-navy">Per-employee profitability</h2>
       <Table
         empty="No one logged time here in the period."
         rows={data.employees}
@@ -54,6 +56,32 @@ export function ProjectPage() {
           { key: "department", label: "Department" },
           { key: "hours", label: "Hours", align: "right", render: (r) => formatHours(r.hours) },
           { key: "costAed", label: "Cost", align: "right", render: (r) => formatAed(r.costAed) },
+          {
+            key: "revenueShareAed",
+            label: "Revenue share",
+            align: "right",
+            render: (r) => formatAed(r.revenueShareAed),
+          },
+          {
+            key: "profitAed",
+            label: "Profit",
+            align: "right",
+            render: (r) => (
+              <span className={r.profitAed < 0 ? "text-bad" : r.profitAed > 0 ? "text-good" : ""}>
+                {formatAed(r.profitAed)}
+              </span>
+            ),
+          },
+          {
+            key: "profitability",
+            label: "Margin",
+            align: "right",
+            render: (r) => (
+              <span className={marginTone(r.profitability) === "bad" ? "text-bad" : marginTone(r.profitability) === "good" ? "text-good" : ""}>
+                {formatPct(r.profitability)}
+              </span>
+            ),
+          },
         ]}
       />
     </div>

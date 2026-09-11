@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import { useApi } from "../api.js";
 import { formatHours, formatPct, monthLabel } from "../format.js";
 import { Fail, Loading, PageHeader, Table } from "../ui.jsx";
@@ -6,6 +6,7 @@ import { Fail, Loading, PageHeader, Table } from "../ui.jsx";
 export function ProductivityPage() {
   const { query, year, month } = useOutletContext();
   const { data, error, loading } = useApi(`/api/productivity${query}`);
+  const navigate = useNavigate();
 
   if (loading) return <Loading />;
   if (error) return <Fail error={error} />;
@@ -18,6 +19,7 @@ export function ProductivityPage() {
       />
       <Table
         empty="No timesheet rows in this period."
+        onRowClick={(row) => row.department && navigate(`/departments/${encodeURIComponent(row.department)}${query}`)}
         rows={data}
         columns={[
           { key: "employeeName", label: "Name" },
