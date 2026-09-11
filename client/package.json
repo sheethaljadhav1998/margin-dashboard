@@ -1,0 +1,6 @@
+{
+  "name": "margin-dashboard-client",
+  "private": true,
+  "description": "Frontend for the Margin Dashboard. Not started in Phase 1.",
+  "scripts": {}
+}

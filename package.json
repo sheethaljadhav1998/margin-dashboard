@@ -1,0 +1,15 @@
+{
+  "name": "margin-dashboard",
+  "private": true,
+  "description": "Local app that turns timesheet, salary, and project-price spreadsheets into a project-margin dashboard.",
+  "scripts": {
+    "inspect": "npm run inspect --prefix server",
+    "install:server": "npm install --prefix server"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
