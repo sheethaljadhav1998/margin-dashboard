@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import multer from "multer";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import {
   categoriesView,
   computeModel,
@@ -186,6 +189,14 @@ export function createApp(db) {
       next(err);
     }
   });
+
+  const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../client/dist");
+  if (fs.existsSync(dist)) {
+    app.use(express.static(dist));
+    app.get(/^(?!\/api).*/, (_req, res) => {
+      res.sendFile(path.join(dist, "index.html"));
+    });
+  }
 
   app.use((err, _req, res, _next) => {
     if (err instanceof ParseError || err.status === 400) {
