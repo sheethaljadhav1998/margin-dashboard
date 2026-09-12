@@ -6,7 +6,7 @@
   "scripts": {
     "inspect": "node scripts/inspect-data.js",
     "self-check": "node scripts/self-check.js",
-    "test": "node --test calc/*.test.js ingest/*.test.js",
+    "test": "node --test calc/*.test.js ingest/*.test.js src/*.test.js",
     "start": "node src/server.js",
     "dev": "node --watch src/server.js"
   },

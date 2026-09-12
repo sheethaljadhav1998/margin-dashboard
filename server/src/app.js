@@ -199,8 +199,8 @@ export function createApp(db) {
   }
 
   app.use((err, _req, res, _next) => {
-    if (err instanceof ParseError || err.status === 400) {
-      res.status(400).json({ error: err.message, ...err.extras });
+    if (err instanceof ParseError || err.status) {
+      res.status(err.status || 400).json({ error: err.message, ...err.extras });
       return;
     }
     if (err instanceof multer.MulterError) {
