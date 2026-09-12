@@ -2,9 +2,11 @@
 
 A local app that turns three messy agency spreadsheets — timesheet, salary overview, and project prices — into a Monday-morning view of **whether a project actually made money**.
 
-It runs on a Mac with Node.js 22+, no cloud account, no API keys.
-
-## Five-minute setup
+## Tech Stack
+- Backend: Node.js + Express
+- Database: SQLite (better-sqlite3)
+- Excel parsing: xlsx (SheetJS)
+- Frontend: React + Vite, Tailwind CSS
 
 ```bash
 cd margin-dashboard
@@ -13,7 +15,6 @@ npm run install:all
 npm run build
 npm start
 ```
-
 Open [http://localhost:3001](http://localhost:3001).
 
 On first launch the API creates `data/margin.db` and loads `data/sample/` (2025 timesheet, salaries, project prices). The dashboard is populated immediately — you should see **AED 2,400,000** cost equal to total salaries, and 11 projects.
@@ -47,7 +48,7 @@ If port 3001 is already taken, stop the other process or set `PORT=3002`.
 
 Year and month filters sit in the header and stick to the URL.
 
-## Assumptions (where the brief was silent)
+## Assumptions
 
 1. **Billable categories** default to `Projects`, `Enhancements`, `Hosting`. `Tentwenty` and every `FC - *` bucket are internal and feed the indirect pool.
 2. **Direct rate** is that person's month salary ÷ hours they logged that month. People with a salary and **zero** hours are support staff: their whole salary goes into the indirect pool. IDL staff who *do* log hours (Hana, Omar) get a direct rate like everyone else.
@@ -62,7 +63,7 @@ Year and month filters sit in the header and stick to the URL.
 
 ```
 client/          Vite + React + Tailwind UI
-server/calc/     Pure cost functions (no DB, no HTTP)
+server/calc/     Pure cost functions
 server/ingest/   Spreadsheet parsers + month-scoped upsert
 server/src/      SQLite + Express
 data/sample/     The three workbooks
